@@ -24,19 +24,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
 
-// Check if url is from which type of video
-function get_video($url, $width = 640, $height = 360){
-  if( empty($width) && empty($height) ){ $width = 640; $height = 360; }
-
-  if(strpos($url,'youtube')){
-    get_youtube($url, $width, $height, 'youtube');
-  }else if(strpos($url,'youtu.be')){
-    get_youtube($url, $width, $height, 'youtu.be');
-  }else if(strpos($url,'vimeo')){
-    get_vimeo($url, $width, $height);
-  }
-}
-
 // The functionality
 include_once('video-sources/youtube.php');
 include_once('video-sources/vimeo.php');
