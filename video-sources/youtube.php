@@ -4,7 +4,7 @@ add_shortcode('youtube', 'wunrav_youtube_shortcode');
 function wunrav_youtube_shortcode( $atts, $content = null ){
   extract( shortcode_atts(array("height" => '', "width" => ''), $atts) );
 
-  $youtube = '<div style="max-width: 100%;">';
+  $youtube = '<div class="wunrav_youtube_wrapper">';
   $youtube .= wunrav_get_youtube($content, $width, $height, '', true);
   $youtube .= '</div>';
 
@@ -13,13 +13,10 @@ function wunrav_youtube_shortcode( $atts, $content = null ){
 
 // Print youtube video
 function wunrav_get_youtube($url, $width, $height, $type, $return = false){
-  if ( ! $width && ! $height ) {
-    $width = '100%';
-    $height = 360;
-  } elseif ( ! $height ) {
-    $height = 360;
+  if ( ! $height ) {
+    $height = '400';
   } elseif ( ! $width ) {
-    $width = '100%';
+    $width = '700';
   }
 
   $type = ( preg_match('/youtu.be\//', $url) ? 'youtu.be' : 'youtube' );
@@ -37,8 +34,8 @@ function wunrav_get_youtube($url, $width, $height, $type, $return = false){
   if( strpos($url, 'rel=0') > 0 ) $attr = $attr . "&rel=0";
 
   if( !$return ){
-    echo '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" allowfullscreen></iframe>';
+    echo '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
   }else{
-    return '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" allowfullscreen></iframe>';
+    return '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
   }
 }

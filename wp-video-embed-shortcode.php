@@ -24,10 +24,16 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
 
-// The functionality
+// the functionality
 include_once('video-sources/youtube.php');
 include_once('video-sources/vimeo.php');
 // include_once('video-sources/pbs.php');
+
+// the style
+add_action('wp_enqueue_scripts', 'wunrav_youtube_style');
+function wunrav_youtube_style() {
+  wp_enqueue_style( 'wunrav-youtube-style', plugin_dir_url(__FILE__) . 'styles/css/wunrav-video-shortcode-style.css', '', '1.0' );
+}
 
 /******************************************************************
  AD BUTTONS TO THE VISUAL EDITOR
