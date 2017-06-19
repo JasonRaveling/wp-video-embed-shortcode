@@ -34,8 +34,8 @@ function wunrav_get_youtube($url, $width, $height, $type, $return = false){
   if( strpos($url, 'rel=0') > 0 ) $attr = $attr . "&rel=0";
 
   if( !$return ){
-    echo '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
+    echo '<iframe src="https://youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
   }else{
-    return '<iframe src="http://www.youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
+    return '<iframe src="https://youtube.com/embed/' . $id[1] . '?wmode=transparent' . $attr . '" height="' . $height . '" width="' . $width . '" frameborder="0" allowfullscreen></iframe>';
   }
 }
