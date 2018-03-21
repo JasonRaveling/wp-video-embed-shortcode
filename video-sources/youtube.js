@@ -5,8 +5,8 @@
                 title : 'Add Youtube',
                 image : url + '/images/youtube.png',
                 onclick : function() {
-                  ed.focus();
-                  ed.selection.setContent('[youtube]PASTE_URL_HERE[/youtube]');
+                    ed.focus();
+                    ed.selection.setContent('[youtube]PASTE_URL_HERE[/youtube]');
                 }
             });
         },

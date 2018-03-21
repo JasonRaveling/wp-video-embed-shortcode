@@ -5,8 +5,8 @@
                 title : 'Add Vimeo',
                 image : url + '/images/vimeo.png',
                 onclick : function() {
-                  ed.focus();
-                  ed.selection.setContent('[vimeo height="HEIGHT" width="WIDTH"]PLACE_URL_HERE[/vimeo]<br/>');
+                    ed.focus();
+                    ed.selection.setContent('[vimeo height="HEIGHT" width="WIDTH"]PLACE_URL_HERE[/vimeo]<br/>');
                 }
             });
         },
