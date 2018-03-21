@@ -49,15 +49,15 @@ function wunrav_video_shorctode_buttons(){
 
 function wunrav_register_shortcode_button($buttons){
     if ( current_user_can('edit_posts') ||  current_user_can('edit_pages') ) {
-        array_push($buttons, "vimeo", "youtube", "pbs", "separator");
+        array_push($buttons, "separator", "vimeo", "youtube", "pbs", "separator");
     }
 
     return $buttons;
 }
 
 function wunrav_add_shortcode_script($plugin_array) {
-    $plugin_array['youtube'] = dirname(__file__) . '/include/javascript/youtube.js';
-    $plugin_array['vimeo'] = dirname(__file__) . '/include/javascript/vimeo.js';
-    $plugin_array['pbs'] = dirname(__file__) . '/include/javascript/pbs.js';
+    $plugin_array['youtube'] = dirname(__file__) . '/video-sources/youtube.js';
+    $plugin_array['vimeo'] = dirname(__file__) . '/video-sources/vimeo.js';
+    $plugin_array['pbs'] = dirname(__file__) . '/video-sources/pbs.js';
     return $plugin_array;
 }

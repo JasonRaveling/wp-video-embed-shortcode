@@ -1,1 +1,1 @@
-.wunrav_youtube_wrapper{position:relative;padding-bottom:56.25%;padding-top:25px;margin:0 0 1em;height:0}.wunrav_youtube_wrapper iframe{position:absolute;top:0;left:0;width:100% !important;height:100% !important}
+.wunrav-video-wrapper{max-width:100%;padding-bottom:56.2%;position:relative;display:inline-block}.wunrav-video-wrapper iframe,.wunrav-video-wrapper object,.wunrav-video-wrapper embed{position:absolute;top:0;left:0;max-width:100%;max-height:100%}.wunrav-video-wrapper.aligncenter{text-align:center}
