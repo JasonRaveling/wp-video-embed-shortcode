@@ -1,16 +1,16 @@
 <?php
 /*
 Plugin Name:  Video Embed Shortcodes
-Description:  Adds [youtube] and [vimeo] shortcodes. Also adds buttons to editor that automatically places the shortcodes.
+Description:  Adds shortcodes for  YouTube, Vimeo, and PBS. Use the buttons in the visual editor to automatically add shortcodes to your post. See the read me page for <a href="https://github.com/webunraveling/wp-video-embed-shortcode">instructions on using the shortcodes</a>.
 Plugin URI:   https://github.com/webunraveling/wp-video-embed-shortcode
 Version:      0.2
-Author:       Jason Raveling
+Author:       WebUnraveling.com
 Author URI:   https://webunraveling.com
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 
 /*
-WP Video Embed Shortcode
+WP Video Embed Shortcodes
 Copyright (C) 2016 Jason Raveling
 
 This program is free software; you can redistribute it and/or modify
