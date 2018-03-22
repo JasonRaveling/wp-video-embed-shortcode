@@ -3,7 +3,7 @@
 Plugin Name:  Video Embed Shortcodes
 Description:  Adds shortcodes for  YouTube, Vimeo, and PBS. Use the buttons in the visual editor to automatically add shortcodes to your post. See the read me page for <a href="https://github.com/webunraveling/wp-video-embed-shortcode">instructions on using the shortcodes</a>.
 Plugin URI:   https://github.com/webunraveling/wp-video-embed-shortcode
-Version:      0.2
+Version:      0.3
 Author:       WebUnraveling.com
 Author URI:   https://webunraveling.com
 License:      GPL2
@@ -49,15 +49,15 @@ function wunrav_video_shorctode_buttons(){
 
 function wunrav_register_shortcode_button($buttons){
     if ( current_user_can('edit_posts') ||  current_user_can('edit_pages') ) {
-        array_push($buttons, "separator", "vimeo", "youtube", "pbs", "separator");
+        array_push($buttons, "separator", "vimeo", "youtube", "pbsvid", "separator");
     }
 
     return $buttons;
 }
 
 function wunrav_add_shortcode_script($plugin_array) {
-    $plugin_array['youtube'] = dirname(__file__) . '/video-sources/youtube.js';
-    $plugin_array['vimeo'] = dirname(__file__) . '/video-sources/vimeo.js';
-    $plugin_array['pbs'] = dirname(__file__) . '/video-sources/pbs.js';
+    $plugin_array['youtube'] = plugin_dir_url(__FILE__) . 'video-sources/youtube.js';
+    $plugin_array['vimeo'] = plugin_dir_url(__FILE__) . 'video-sources/vimeo.js';
+    $plugin_array['pbsvid'] = plugin_dir_url(__FILE__) . 'video-sources/pbs.js';
     return $plugin_array;
 }

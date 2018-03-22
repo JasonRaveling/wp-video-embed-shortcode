@@ -3,10 +3,10 @@
         init : function(ed, url) {
             ed.addButton('vimeo', {
                 title : 'Add Vimeo',
-                image : url + '/images/vimeo.png',
+                image : url + '/images/logo-vimeo.svg',
                 onclick : function() {
                     ed.focus();
-                    ed.selection.setContent('[vimeo height="HEIGHT" width="WIDTH"]PLACE_URL_HERE[/vimeo]<br/>');
+                    ed.selection.setContent('[vimeo]PASTE_URL_HERE[/vimeo]<br/>');
                 }
             });
         },

@@ -1,45 +1,22 @@
 <?php
 
-add_shortcode('youtube', 'gdl_youtube_shortcode');
-function wunrav_youtube_shortcode( $atts, $content = null ){
-
-    extract( shortcode_atts(array("height" => '', "width" => '800', "align" => 'aligncenter'), $atts) );
-
-    // set alignment in the shortcode with align="alignleft"
-    if ( $align == 'alignleft' || $align == 'left' ) {
-        $align = "alignleft";
-    } elseif ( $align == 'alignright' || $align == 'right' ) {
-        $align = "alignright";
-    } else {
-        $align = "aligncenter";
-    }
-
-    $youtube = '<div class="wunrav-video-wrapper ' . $align . '">';
-    $youtube .= get_youtube($content, $width, $height, '', true);
-    $youtube .= '</div>';
-
-    return $youtube;
-
-}
-
-
 // Print youtube video
-function get_youtube($url, $width = 800, $height, $type, $return = false){
+function wunrav_get_youtube($url, $width = 1400, $height, $type, $return = false) {
 
-    if ( !$type == 'youtube' || !$type == 'youtu.be' ){
-	$type = ( preg_match('/youtu.be\//', $url) ? 'youtu.be' : 'youtube' );
-    }
-
-    if ( ! $height && $width != 800 ) {
+    if ( ! $height && $width != 1400 ) {
 	$height = $width * 0.562;
     } else {
-	$height = 450;
+	$height = 788;
+    }
+
+    if ( !$type == 'youtube' || !$type == 'youtu.be' ){
+        $type = ( preg_match('/youtu.be\//', $url) ? 'youtu.be' : 'youtube' );
     }
 
     if( $type == 'youtube' ){
-	preg_match('/[\\?\\&]v=([^\\?\\&]+)/',$url,$id);
+        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $id);
     }else{
-	preg_match('/youtu.be\/([^\\?\\&]+)/', $url, $id);
+        preg_match('/youtu.be\/([^\\?\\&]+)/', $url, $id);
     }
 
     $attr = "";
@@ -53,5 +30,27 @@ function get_youtube($url, $width = 800, $height, $type, $return = false){
     }else{
 	return $iframe; 
     }
+
+}
+
+add_shortcode('youtube', 'wunrav_youtube_shortcode');
+function wunrav_youtube_shortcode( $atts, $content = null ){
+
+    extract( shortcode_atts(array("height" => '', "width" => '1400', "align" => 'aligncenter'), $atts) );
+
+    // set alignment in the shortcode with align="alignleft"
+    if ( $align == 'alignleft' || $align == 'left' ) {
+        $align = "alignleft";
+    } elseif ( $align == 'alignright' || $align == 'right' ) {
+        $align = "alignright";
+    } else {
+        $align = "aligncenter";
+    }
+
+    $youtube = '<div class="wunrav-video-wrapper ' . $align . '">';
+    $youtube .= wunrav_get_youtube($content, $width, $height, '', true);
+    $youtube .= '</div>';
+
+    return $youtube;
 
 }

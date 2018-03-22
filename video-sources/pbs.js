@@ -1,9 +1,9 @@
 (function() {
-    tinymce.create('tinymce.plugins.pbsVid', {
+    tinymce.create('tinymce.plugins.pbsvid', {
         init : function(ed, url) {
-            ed.addButton('pbsVid', {
+            ed.addButton('pbsvid', {
                 title : 'Add PBS Video',
-                image : url + '/images/pbsVid.svg',
+                image : url + '/images/logo-pbs.svg',
                 onclick : function() {
                     ed.focus();
                     ed.selection.setContent('[pbsvid]Paste the video ID here (e.g. 3010057273)[/pbsvid]');  
@@ -14,5 +14,5 @@
             return null;
         }
     });
-    tinymce.PluginManager.add('pbsVid', tinymce.plugins.pbsVid);
+    tinymce.PluginManager.add('pbsvid', tinymce.plugins.pbsvid);
 })();
